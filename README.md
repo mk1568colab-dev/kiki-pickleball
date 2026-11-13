@@ -11,9 +11,11 @@ inventory, product development, and cash decisions.
 
 The website includes:
 
-- A tour of actual game screens from fictional practice classrooms.
+- A five-step student decision cycle with actual screens from fictional
+  practice classrooms: read and review, plan products, plan operations,
+  check and submit, review and adapt, then repeat for the next round.
 - An adaptable preparation, first-session, and extended-play teaching sequence.
-- A student quick start, instructor outline, and debrief questions.
+- An every-round student decision guide, instructor outline, and debrief questions.
 - A classroom team estimate and downloadable introductory teaching outline.
 
 Classroom access is arranged separately. Contact details will be added later.

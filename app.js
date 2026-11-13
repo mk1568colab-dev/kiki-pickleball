@@ -5,41 +5,76 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const tour = [
   {
-    title: ["The same market.", "Different decisions."],
-    description: "Every team reads the same public market outlook. Demand ranges and market conditions set the context; students decide how to respond.",
-    question: "What should change in your operating plan when the market changes?",
+    label: "Read & review",
+    title: ["Read the market.", "Review your firm."],
+    description: "Start with the market conditions and the business your team carries into this round.",
+    actions: [
+      "Read the demand outlook, segment mix, material costs, supply risk, quality sensitivity, and technology conditions.",
+      "Review your own results, inventory, incoming materials, backlog, capacity, cash, and debt.",
+      "Compare published competitor prices and products. Agree on what needs to change in your plan."
+    ],
+    question: "Your team can explain what changed and which constraint matters most.",
+    note: "Round 1: use the pre-game records and starting team state instead of previous-round results.",
     screen: "Public Market Report / Market Outlook",
     image: "market.png",
     alt: "Practice classroom market report with a demand forecast range and an English market summary"
   },
   {
-    title: ["A portfolio.", "One coordinated plan."],
-    description: "Set price, demand forecast, production, and quality spending for each paddle. Every product shares the same materials, capacity, and cash.",
-    question: "Can your operations deliver the strategy your team has chosen?",
+    label: "Plan products",
+    title: ["Choose the portfolio.", "Set a demand plan."],
+    description: "Decide how each paddle competes, then make a provisional plan for current and future products.",
+    actions: [
+      "Choose active paddles, customer segments, and prices. Decide whether older products should stay, retire, or be replaced.",
+      "Enter each paddle's Demand Forecast, planned production, and target finished-goods inventory.",
+      "Review development investment, testing, and launch gates. For a launched paddle, enter its price, forecast, and production."
+    ],
+    question: "Every active paddle has a clear role and a plan you can explain.",
+    note: "Your forecast is an estimate, not guaranteed demand or sales. Revisit this plan if operations or cash cannot support it.",
     screen: "Team Decisions / Product Profile",
     image: "products.png",
     alt: "Demo product profile with price, forecast, production, and quality controls"
   },
   {
-    title: ["Today's operations.", "Tomorrow's portfolio."],
-    description: "Invest in development and testing, check launch readiness, and introduce a new paddle. Once it enters the portfolio, teams set its price, forecast, and production.",
-    question: "When is a new product worth the investment, and can you support its launch?",
-    screen: "Team Decisions / Newly Launched Paddles",
-    image: "launch.png",
-    alt: "Local launch demonstration with new paddles in slots C and D and editable price, forecast, and production controls"
+    label: "Plan operations",
+    title: ["Make the plan", "operationally feasible."],
+    description: "Connect product-level production to shared materials, capacity, quality, and future supply.",
+    actions: [
+      "Compare required raw materials with carryover stock and arrivals available for this round's production.",
+      "Align production, overtime, expansion timing, QC spending, and backlog tolerance. Review capacity and cost previews.",
+      "Place future material orders. Set Economy, Standard, and Reliable shares to total 100%; compare costs and arrival ranges."
+    ],
+    question: "Your production plan fits available resources, and future orders match your replenishment needs.",
+    note: "A new raw-material order supports future production. It cannot fix a material shortage in the current round.",
+    screen: "Team Decisions / Firm Controls & Supplier Quotes",
+    image: "operations.png",
+    alt: "Practice classroom firm controls, supplier shares, arrival ranges, material costs, and ordering fees"
   },
   {
-    title: ["Four checks.", "One team decision."],
-    description: "Review demand, production capacity, materials, and service, quality, and cash before saving. The checklist draws attention to tradeoffs without choosing the plan for students.",
-    question: "Have your forecasts, supply decisions, and cash commitments been coordinated?",
+    label: "Check & submit",
+    title: ["Check the whole plan.", "Save one team decision."],
+    description: "Bring the separate decisions together before committing the team's plan in the game.",
+    actions: [
+      "Review projected costs and cash, including materials, production, quality, capacity, development, borrowing, and interest.",
+      "Resolve input errors, discuss warnings, and revise unsupported product or operations choices. Agree on the final plan.",
+      "Have one designated teammate save during the submission window and verify that the decision was recorded."
+    ],
+    question: "The team agrees on the tradeoffs and has confirmed its saved decision.",
+    note: "The instructor must run the round before results are available. Passing the checks does not guarantee profitability.",
     screen: "Team Decisions / Pre-Submit Check",
     image: "checklist.png",
     alt: "Kiki's four-part pre-submit checklist for market forecast, production capacity, materials supply, and service, quality, and cash"
   },
   {
-    title: ["See the outcome.", "Explain the tradeoff."],
-    description: "Review revenue, operating costs, cash, and financing alongside the round's operational results. Teams explain what happened and revise the next plan.",
-    question: "Did the business improve, or did a good-looking sales result hide an operating problem?",
+    label: "Review & adapt",
+    title: ["Explain the outcome.", "Adapt for next round."],
+    description: "After the instructor runs the round, use the results to explain what worked and what did not.",
+    actions: [
+      "Compare forecasts with actual demand and sales. Identify shortfalls in materials, capacity, quality, or product fit.",
+      "Review profit, service, inventory, cash, debt, and product performance together, not just the ranking.",
+      "Record one decision to keep, one to change, and the evidence behind each. Return to Step 1 when the next market report opens."
+    ],
+    question: "Your next-round adjustment is tied to a specific result, not just a guess.",
+    note: "Repeat Steps 1-5 each round. Carry forward what you learned, but reconsider it when the market changes.",
     screen: "Finance Detail / Round Review",
     image: "finance.png",
     alt: "Practice classroom finance screen with revenue, profit, cash, cost breakdown, and a cash bridge"
@@ -72,15 +107,12 @@ const phases = [
 
 const resources = {
   student: {
-    title: "Student quick start",
-    intro: "A short orientation for a first practice round. Use your instructor's current manual for detailed controls, rules, and deadlines.",
-    sections: [
-      {title: "1. Read the public market report", items: ["Check the demand outlook, segment mix, material costs, supply conditions, quality sensitivity, and technology conditions.", "Discuss what has changed since the previous round. A market outlook is not a promise that your firm will sell a particular quantity."]},
-      {title: "2. Build one coordinated plan", items: ["For each active paddle, agree on price, demand forecast, production, and quality spending.", "Check shared capacity and material availability. An order placed now may arrive in a future round rather than support current production.", "Consider inventory, backlog, borrowing, and the cash needed to support the plan."]},
-      {title: "3. Manage future products", items: ["Review development funding, testing, and launch readiness before requesting a launch.", "When a new paddle appears in an active product slot, enter and check its selling and production decisions before saving."]},
-      {title: "4. Review and save", items: ["Discuss the pre-submit checks as a team, resolve input errors, and understand any remaining warnings.", "Save during the instructor's submission window and confirm that the decision was recorded. Assign one person to make the final save after the team agrees."]},
-      {title: "5. Learn from the results", items: ["After the instructor runs the round, compare your forecast with demand and sales. Explain any production or service shortfall.", "Review costs, profit, cash, debt, inventory, and product performance before choosing your next action."]}
-    ]
+    title: "Every-round decision guide",
+    intro: "Follow Steps 1-5, then repeat with the next market report. Revisit earlier choices whenever capacity, materials, or cash cannot support the plan. Between Steps 4 and 5, the instructor closes submissions and runs the round. Use your instructor's current manual for detailed controls, rules, and deadlines.",
+    sections: tour.map((step, index) => ({
+      title: `${index + 1}. ${step.label}`,
+      items: [...step.actions, `Ready to move on when: ${step.question}`, step.note]
+    }))
   },
   instructor: {
     title: "First-session outline",
@@ -105,7 +137,7 @@ const resources = {
   }
 };
 
-let currentTour = 1;
+let currentTour = 0;
 let currentResource = null;
 let lastDialogTrigger = null;
 
@@ -123,11 +155,24 @@ function chooseTour(index) {
   activateTab($$("[data-tour]"), index, $("#tour-panel"));
   $("#tour-title").replaceChildren(document.createTextNode(item.title[0]), document.createElement("br"), document.createTextNode(" " + item.title[1]));
   $("#tour-description").textContent = item.description;
+  $("#step-eyebrow").textContent = `STEP ${index + 1} / ${item.label.toUpperCase()}`;
+  $("#tour-actions").replaceChildren(...item.actions.map((text) => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    return li;
+  }));
   $("#tour-question").textContent = item.question;
+  $("#tour-note").textContent = item.note;
   $("#screen-name").textContent = item.screen;
   $("#tour-image").src = `assets/${item.image}`;
   $("#tour-image").alt = item.alt;
   $("#image-open").setAttribute("aria-label", `Enlarge ${item.screen} screenshot`);
+  $("#launch-example").hidden = index !== 1;
+  $("#step-position").textContent = `Step ${index + 1} of ${tour.length}`;
+  $("#step-previous").disabled = index === 0;
+  $("#step-next").hidden = index === tour.length - 1;
+  $("#step-repeat").hidden = index !== tour.length - 1;
+  if (index < tour.length - 1) $("#step-next-label").textContent = `Next: ${tour[index + 1].label}`;
 }
 
 function choosePhase(index) {
@@ -230,6 +275,22 @@ function classroomEstimate() {
 
 wireTabs("[data-tour]", chooseTour);
 wireTabs("[data-phase]", choosePhase);
+$("#step-previous").addEventListener("click", () => chooseTour(Math.max(0, currentTour - 1)));
+$("#step-next").addEventListener("click", () => {
+  chooseTour(Math.min(tour.length - 1, currentTour + 1));
+  if (currentTour === tour.length - 1) $("#step-repeat").focus({preventScroll: true});
+});
+$("#step-repeat").addEventListener("click", () => {
+  chooseTour(0);
+  $("#step-next").focus({preventScroll: true});
+});
+$("#launch-example").addEventListener("click", (event) => {
+  $("#image-dialog-title").textContent = "New-product example / Slots C and D";
+  $("#full-image").src = "assets/launch.png";
+  $("#full-image").alt = "Local launch demonstration with new paddles in slots C and D and editable price, forecast, and production controls";
+  openDialog($("#image-dialog"), event.currentTarget);
+  $(".full-image").scrollTo(0, 0);
+});
 $("#zoom-screen").addEventListener("click", openImage);
 $("#image-open").addEventListener("click", openImage);
 $$("[data-resource]").forEach((button) => button.addEventListener("click", () => openResource(button.dataset.resource, button)));
