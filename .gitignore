@@ -1,0 +1,19 @@
+# Only reviewed public website files belong in this repository.
+*
+!/.gitignore
+!/.gitattributes
+!/.nojekyll
+!/README.md
+!/index.html
+!/styles.css
+!/app.js
+!/assets/
+!/assets/checklist.png
+!/assets/court.png
+!/assets/finance.png
+!/assets/kiki.png
+!/assets/launch.png
+!/assets/LUCIDE_LICENSE.txt
+!/assets/lucide.min.js
+!/assets/market.png
+!/assets/products.png
